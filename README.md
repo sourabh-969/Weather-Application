@@ -11,33 +11,33 @@ This is a simple weather application that allows users to search for weather for
 
 - Responsiveness across screens
  
-    ![Device view](Screenshot\2.screen.jpeg)![Desktop view](Screenshot\1.screen.jpeg)
+    ![Device view](./Screenshot/2.screen.jpeg)![Desktop view](./Screenshot/1.screen.jpeg)
   
 - Search for weather by city name or Get weather for current location
  
-    ![Search bar & Auto Location](<Screenshot\search bar.jpeg>) ![Search bar & Auto Location: desktop view](<Screenshot\search and auto location.jpeg>)
+    ![Search bar & Auto Location](<./Screenshot/search bar.jpeg>) ![Search bar & Auto Location: desktop view](<./Screenshot/search and auto location.jpeg>)
   
 - Display current weather conditions (temperature, description, humidity, wind speed)
  
-    ![current weather](<Screenshot\2.weather card.jpeg>)
+    ![current weather](<./Screenshot/2.weather card.jpeg>)
   
 - Show 5-day weather forecast
  
-    ![forecast](<Screenshot\2.weather card_extnded.png>) ![forcast desktop](<Screenshot\forcast desktop.jpeg>)
+    ![forecast](<./Screenshot/2.weather card_extnded.png>) ![forcast desktop](<./Screenshot/forcast desktop.jpeg>)
   
 - Recent searches dropdown
 
  
-    ![Search History](Screenshot\history.jpeg)
+    ![Search History](./Screenshot/history.jpeg)
   
 - Error handling for invalid locations or API errors
 
  
-    ![Invalid Input](Screenshot\3.Error_input.PNG)
+    ![Invalid Input](./Screenshot/3.Error_input.PNG)
   
-    ![Fetch Error : Next Day Forcast](Screenshot\1.Error.png)
+    ![Fetch Error : Next Day Forcast](./Screenshot/1.Error.png)
   
-    ![Error](Screenshot\2.Error.png)
+    ![Error](./Screenshot/2.Error.png)
 
 
 
