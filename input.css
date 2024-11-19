@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Doto&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    /* border: 1px solid black; */
+  }
+
+  body {
+    /* background-image: linear-gradient(-225deg, #D4FFEC 0%, #57F2CC 48%, #4596FB 100%); */
+    /* @apply bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-blue-700 via-blue-800 to-gray-900; */
+    background-image: linear-gradient(
+      -225deg,
+      #77ffd2 0%,
+      #6297db 48%,
+      #1eecff 100%
+    );
+  }
+
+  /* .dropdownbtnfist {
+        background-image: linear-gradient(-225deg, #D4FFEC 0%, #57F2CC 48%, #4596FB 100%);
+
+      } */
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInUp {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 2s ease-out forwards;
+  }
+
+  .animate-slideInUp {
+    animation: slideInUp 1s ease-out forwards;
+  }
+}

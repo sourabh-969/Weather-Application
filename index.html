@@ -1,0 +1,194 @@
+<!-- Code format using prettier-code formatter -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="tag" content="web-project">
+    <meta name="tag" content="web-developments_certificate">
+    <meta name="tag" content="coding">
+    <meta name="tag" content="design">
+    <meta name="description" content="Weather Forecast Application- Using OpenWeatherMapAPI">
+    <meta name="keywords" content="Weather Forecast Application, Weather Forecast project, HTML, CSS, javascript, web development, Full-Stack Developer">
+    <meta name="author" content="Sourabh">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5cc55520bd.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body
+    class="max-sm:min-h-screen flex flex-col items-center justify-center p-4 md:grid md:grid-cols-2 md:grid-flow-row md:gap-3 md:justify-center md:items-center md:h-full md:w-screen"
+  >
+    <!-- Header Section -->
+    <header
+      class="text-center mb-5 animate-slideInUp md:col-start-1 md:col-span-2 md:row-start-1 md:row-end-1 md:h-fit md:w-full md:mt-0"
+    >
+      <h1
+        class="font-doto text-3xl font-bold text-white mb-5 animate-pulse md:text-5xl md:"
+      >
+        Weather RADAR
+      </h1>
+      <p class="text-md md:text-xl text-white mb-5">
+        The Data is Forecast based on Fress OpenWeatherMap API
+      </p>
+    </header>
+
+    <!-- Search Section -->
+    <div
+      id="searchSection"
+      class="bg-gray-950 bg-opacity-20 p-3 rounded-lg shadow-lg mb-8 w-full max-sm:max-w-lg animate-slideInUp relative z-20 md:row-start-2 md:row-end-2 md:col-start-1 md:h-full md:w-full md:m-auto md:flex md:flex-col md:justify-between md:gap-4"
+    >
+      <div
+        class="max-sm:inline-flex flex items-center w-[85%] space-x-4 md:w-full md:flex md:flex-col md:gap-4"
+      >
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter city name"
+          class="m-auto w-full h-10 max-sm:w-[80%] max-sm:h-8 max-sm:text-center rounded-full placeholder:pl-3 md:w-full md:m-auto md:p-3 md:text-lg md:rounded-b-none md:rounded-t-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <button
+          id="searchButton"
+          class="md:w-1/3 md:text-center md:h-1/2 md:text-2xl md:hover:animate-bounce md:m-auto bg-indigo-600 text-white w-fit h-fit max-sm:rounded-full rounded-lg font-semibold text-lg hover:bg-blue-700 transition-all duration-300 flex items-center"
+        >
+          <i
+            class="fa-solid fa-magnifying-glass max-sm:w-[5%] py-2 px-2 md:w-full"
+          ></i>
+          <div class="max-sm:hidden md:visible mr-3 md:text-center md:w-full">
+            Search
+          </div>
+        </button>
+      </div>
+
+      <!-- Search History Dropdown -->
+      <div
+        id="historyDropdown"
+        class="absolute bg-white border border-gray-300 rounded-b-lg max-sm:w-full md:w-[96.7%] mt-1 hidden z-30 md:top-12 max-sm:left-0 md:left-[11px]"
+      ></div>
+
+      <div class="flex items-center justify-center mt-1 max-sm:hidden visible">
+        <div class="flex-grow border-t border-white invisible sm:visible"></div>
+        <span class="text-white mx-4 invisible sm:visible"
+          >Or&nbsp;/&nbsp;Use</span
+        >
+        <div class="flex-grow border-t border-white invisible sm:visible"></div>
+      </div>
+      <div class="max-sm:inline-flex flex items-center justify-center">
+        <button
+          id="currentLocation"
+          class="bg-green-600 max-sm:bg-white max-sm:hover:bg-slate-400 max-sm:text-black text-white w-fit h-fit max-sm:rounded-full max-sm:flex max-sm:justify-center max-sm:items-center rounded-lg font-semibold hover:bg-green-700 transition-all duration-300"
+        >
+          <i class="fa-solid fa-location-crosshairs text-[18px] m-0 p-2"></i>
+
+          <span class="max-sm:hidden md:visible mr-3"
+            >Auto Detect Location</span
+          >
+        </button>
+      </div>
+    </div>
+
+    <!-- Weather Display Section -->
+    <div
+      id="weatherDisplay"
+      class="bg-gray-950 bg-opacity-20 p-3 md:p-8 rounded-lg shadow-lg w-full max-w-md md:max-w-2xl mb-5 animate-slideInUp relative z-10 md:h-full md:col-start-2 md:row-start-2 md:row-end-2 md:col-end-2 md:m-auto"
+    >
+      <div class="w-full m-auto flex justify-between">
+        <h2
+          class="text-xl md:text-2xl font-semibold text-white md:hover:text-yellow-300 md:font-doto"
+        >
+          Current Weather
+        </h2>
+        <p id="dateTime" class="text-lg md:text-xl text-white">Current_Date</p>
+      </div>
+
+      <div
+        class="flex flex-col justify-between items-center text-white md:h-full"
+      >
+        <div
+          id="weatherIcon"
+          class="flex flex-col justify-center items-center max-sm:w-full max-sm:m-auto md:flex md:flex-row md:w-full md:justify-between"
+        >
+          <p
+            id="cityName"
+            class="text-xl md:text-3xl md:font-semibold capitalize"
+          >
+            Location
+          </p>
+          <img
+            src="/assets/weather logo.png"
+            alt="Weather_Theme_Icon"
+            id="icon"
+            class="w-24 h-24 animate-pulse"
+          />
+        </div>
+        <div
+          class="mb-2 md:mb-0 max-sm:w-full max-sm:m-auto max-sm:grid max-sm:grid-rows-3 max-sm:grid-cols-2 max-sm:justify-center max-sm:items-center md:flex md:flex-col md:justify-start md:w-full md:gap-2"
+        >
+          <p
+            id="condition"
+            class="text-lg md:text-2xl md:font-semibold capitalize max-sm:row-start-1 max-sm:col-span-2 max-sm:text-center md:text-center"
+          >
+            Weather
+          </p>
+          <p
+            id="temperature"
+            class="text-lg md:text-xl max-sm:row-start-2 max-sm:col-span-2 max-sm:text-center"
+          >
+            Temperature
+          </p>
+          <p
+            id="wind"
+            class="text-lg md:text-xl max-sm:row-start-3 max-sm:col-start-1 max-sm:text-left"
+          >
+            Wind-speed
+          </p>
+          <p
+            id="humidity"
+            class="text-lg md:text-xl max-sm:row-start-3 max-sm:col-start-2 max-sm:text-right"
+          >
+            Humidity
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extended Forecast Section -->
+    <div
+      id="extendedForecast"
+      class="bg-white bg-opacity-20 p-3 md:p-8 rounded-lg shadow-lg animate-slideInUp hidden md:h-full md:w-full md:m-auto md:col-span-2"
+    >
+      <h2 class="text-sm m-auto p-1 md:text-3xl md:font-semibold text-white">
+        UPCOMING DAYS - Forecast
+      </h2>
+
+      <div class="relative">
+        <!-- Forecast Display -->
+        <div
+          id="forecastDisplay"
+          class="md:h-full md:w-full md:flex md:flex-col md:gap-2 max-sm:flex max-sm:flex-col max-sm:gap-2"
+        >
+          <!-- Forecast items added dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Extended Forecast Button -->
+    <div
+      class="md:w-full md:h-full md:items-center md:justify-center md:col-span-2 max-sm::flex max-sm::flex-row max-sm:w-full"
+    >
+      <button
+        id="extendedForecastButton"
+        class="dropdownbtnfist bg-gray-950 bg-opacity-20 text-white py-2 px-4 rounded-lg font-semibold transition-all duration-300 md:w-full hidden w-full"
+      >
+        <div
+          class="md:flex md:justify-between md:text-[25px] hover:text max-sm:flex max-sm:justify-between"
+        >
+          <div class="font-doto">NEXT-DAYS Forecast</div>
+          <div class="hover:text-black font-mono">Show</div>
+        </div>
+      </button>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
