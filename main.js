@@ -167,7 +167,7 @@ function updateWeatherDisplay(data) {
     document.getElementById('dateTime').textContent = `${date}`;
     document.getElementById('cityName').textContent = `City: ${data.name}`;
     document.getElementById('condition').textContent = `Forecast: ${data.weather[0].description}`;
-    document.getElementById('temperature').textContent = `Temp: ${data.main.temp} °C`;
+    document.getElementById('temperature').textContent = `Temp: ${data.main.temp - 273.15} °C`;
     document.getElementById('wind').textContent = `Wind: ${data.wind.speed} m/s`;
     document.getElementById('humidity').textContent = `Humidity: ${data.main.humidity}%`;
 
