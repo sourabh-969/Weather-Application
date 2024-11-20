@@ -98,7 +98,7 @@ function getLocationWeather() {
 function fetchWeatherData(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
     fetch(url)
         .then(response => response.json())
@@ -124,7 +124,7 @@ function fetchWeatherDataByCity(cityName) {
         .then(coords => {
             const lat = coords.lat;
             const lon = coords.lon;
-            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
             return fetch(url);
         })
@@ -142,7 +142,7 @@ function fetchWeatherDataByCity(cityName) {
 // Get coordinates of a city
 function getCoordinates(cityName) {
     
-    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}&units=metric`;
 
     return fetch(url)
         .then(response => response.json())
